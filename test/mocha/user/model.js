@@ -30,7 +30,6 @@ describe('<Unit Test>', function() {
         });
 
         describe('Method Save', function() {
-            /**
             it('should begin with no users', function(done) {
                 User.find({}, function(err, users) {
                     users.should.have.length(0);
@@ -57,7 +56,6 @@ describe('<Unit Test>', function() {
                     done();
                 });
             });
-            */
         });
 
         after(function(done) {
