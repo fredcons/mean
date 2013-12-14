@@ -56,11 +56,23 @@ module.exports = function(grunt) {
             }
         },
         mochaTest: {
-            options: {
-                reporter: 'xunit',
-                captureFile: 'test/mocha/test.out'
+            test: {
+                options: {
+                    reporter: 'xunit',
+                    captureFile: 'test/mocha/test.out',
+                    require: 'test/blanket'
+                },
+                src: ['test/mocha/**/*.js']
             },
-            src: ['test/mocha/**/*.js']
+            coverage: {
+                options: {
+                    reporter: 'html-cov',
+                    // use the quiet flag to suppress the mocha console output
+                    quiet: true,
+                    captureFile: 'test/coverage/coverage.html'
+                },
+                src: ['test/mocha/**/*.js']
+            }
         },
         env: {
             test: {
@@ -90,5 +102,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['jshint', 'concurrent']);
 
     //Test task.
-    grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+    grunt.registerTask('test', ['env:test', 'mochaTest:test', 'mochaTest:coverage', 'karma:unit']);
 };
