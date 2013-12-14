@@ -66,10 +66,10 @@ module.exports = function(grunt) {
             },
             coverage: {
                 options: {
-                    reporter: 'html-cov',
+                    reporter: 'json-cov',
                     // use the quiet flag to suppress the mocha console output
                     quiet: true,
-                    captureFile: 'test/coverage/coverage.html'
+                    captureFile: 'test/coverage/coverage.json'
                 },
                 src: ['test/mocha/**/*.js']
             }
