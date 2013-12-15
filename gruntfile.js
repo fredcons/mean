@@ -90,8 +90,7 @@ module.exports = function(grunt) {
             options: {
                 jshintrc: '.jshintrc',
                 force: true,
-                reporter: 'checkstyle',
-                reporterOutput: 'test/coverage/jshint-checkstyle.xml'
+                reporterOutput: 'test/coverage/jshint.out'
             },
             all: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js'],
         }
