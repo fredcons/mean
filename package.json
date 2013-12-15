@@ -36,9 +36,7 @@
         "mean-logger": "latest",
         "forever": "latest",
         "bower": "latest",
-        "grunt": "latest",
-        "grunt-cli": "latest",
-        "grunt-env": "latest"
+        "grunt": "latest"
     },
     "devDependencies": {
         "supertest": "latest",
@@ -61,6 +59,9 @@
         "karma-coverage": "~0.1.0",
         "blanket": "latest",
         "mocha-lcov-reporter": "latest",
-        "grunt-contrib-jshint": "latest"
+        "grunt-contrib-jshint": "latest",
+        "matchdep": "latest",
+        "grunt-env": "latest",
+        "grunt-cli": "latest"
     }
 }
