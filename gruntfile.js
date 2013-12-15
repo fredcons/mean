@@ -85,6 +85,15 @@ module.exports = function(grunt) {
             unit: {
                 configFile: 'test/karma/karma.conf.js'
             }
+        },
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                force: true,
+                reporter: 'checkstyle',
+                reporterOutput: 'test/coverage/jshint-checkstyle.xml'
+            },
+            all: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js'],
         }
     });
 
@@ -96,6 +105,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     //Making grunt default to force in order not to break the project.
     grunt.option('force', true);
@@ -104,5 +114,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['jshint', 'concurrent']);
 
     //Test task.
-    grunt.registerTask('test', ['env:test', 'mochaTest:test', 'mochaTest:coverage', 'karma:unit']);
+    grunt.registerTask('test', ['env:test', 'mochaTest:test', 'karma:unit']);
+
+    grunt.registerTask('ci', ['env:test', 'mochaTest:test', 'mochaTest:coverage', 'karma:unit', 'jshint']);
 };

@@ -60,6 +60,7 @@
         "grunt-karma": "~0.6.2",
         "karma-coverage": "~0.1.0",
         "blanket": "latest",
-        "mocha-lcov-reporter": "latest"
+        "mocha-lcov-reporter": "latest",
+        "grunt-contrib-jshint": "latest"
     }
 }
