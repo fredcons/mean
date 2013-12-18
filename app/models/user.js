@@ -105,7 +105,7 @@ UserSchema.methods = {
      * @api public
      */
     makeSalt: function() {
-       return crypto.randomBytes(16).toString('base64'); 
+        return crypto.randomBytes(16).toString('base64'); 
     },
 
     /**
